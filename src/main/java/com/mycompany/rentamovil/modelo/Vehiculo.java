@@ -46,7 +46,7 @@ public abstract class Vehiculo {
     static String normalizarPlaca(String placa) {
         if (placa == null || placa.trim().isEmpty()) {
             throw new IllegalArgumentException(
-                    "La placa no puede estar vacía.");
+                    "La placa no puede estar vacia.");
         }
 
         return placa.trim().toUpperCase(Locale.ROOT);

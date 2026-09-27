@@ -109,12 +109,12 @@ public class RentaMovil {
     }
 
     private void registrarVehiculo() {
-        System.out.println("\nREGISTRAR VEHÍCULO");
-        System.out.println("1. Automóvil");
+        System.out.println("\nREGISTRAR VEHICULO");
+        System.out.println("1. Automovil");
         System.out.println("2. Motocicleta");
         System.out.println("3. Camioneta de carga");
 
-        int tipo = leerEntero("Seleccione la categoría: ", 1, 3);
+        int tipo = leerEntero("Seleccione la categoria: ", 1, 3);
         String placa = leerTexto("Placa: ");
         String marca = leerTexto("Marca: ");
         String modelo = leerTexto("Modelo: ");
@@ -127,7 +127,7 @@ public class RentaMovil {
             case 1:
                 int pasajeros = leerEntero(
                         "Cantidad de pasajeros: ", 1, Integer.MAX_VALUE);
-                boolean automatica = leerSiNo("¿Transmisión automatica? (S/N): ");
+                boolean automatica = leerSiNo("¿Transmision automatica? (S/N): ");
                 vehiculo = new Automovil(
                         placa, marca, modelo, tarifa, pasajeros, automatica);
                 break;
@@ -187,7 +187,7 @@ public class RentaMovil {
 
         if (!vehiculo.isDisponible()) {
             throw new IllegalStateException(
-                    "El vehiculo con placa " + vehiculo.getPlaca() + " ya está alquilado.");
+                    "El vehiculo con placa " + vehiculo.getPlaca() + " ya esta alquilado.");
         }
 
         int dias = leerEntero("Dias de alquiler: ", 1, Integer.MAX_VALUE);
