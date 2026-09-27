@@ -22,12 +22,12 @@ public abstract class Vehiculo {
 
         if (marca == null || marca.trim().isEmpty()) {
             throw new IllegalArgumentException(
-                    "La marca no puede estar vacía.");
+                    "La marca no puede estar vacia.");
         }
 
         if (modelo == null || modelo.trim().isEmpty()) {
             throw new IllegalArgumentException(
-                    "El modelo no puede estar vacío.");
+                    "El modelo no puede estar vacio.");
         }
 
         if (tarifaDiaria == null
@@ -63,7 +63,7 @@ public abstract class Vehiculo {
     public abstract String getCategoria();
 
     public final String getDescripcion() {
-        return "Categoría: " + getCategoria()
+        return "Categoria: " + getCategoria()
                 + "\nPlaca: " + placa
                 + "\nMarca: " + marca
                 + "\nModelo: " + modelo
@@ -76,7 +76,7 @@ public abstract class Vehiculo {
     public final BigDecimal calcularCosto(int dias) {
         if (dias <= 0) {
             throw new IllegalArgumentException(
-                    "Los días de alquiler deben ser mayores que cero.");
+                    "Los dias de alquiler deben ser mayores que cero.");
         }
 
         BigDecimal costoBase = tarifaDiaria.multiply(BigDecimal.valueOf(dias));
@@ -94,7 +94,7 @@ public abstract class Vehiculo {
     void ocupar() {
         if (!disponible) {
             throw new IllegalStateException(
-                    "El vehículo con placa " + placa + " ya está alquilado.");
+                    "El vehiculo con placa " + placa + " ya esta alquilado.");
         }
 
         disponible = false;
@@ -103,7 +103,7 @@ public abstract class Vehiculo {
     void liberar() {
         if (disponible) {
             throw new IllegalStateException(
-                    "El vehículo con placa " + placa + " ya está disponible.");
+                    "El vehiculo con placa " + placa + " ya esta disponible.");
         }
 
         disponible = true;

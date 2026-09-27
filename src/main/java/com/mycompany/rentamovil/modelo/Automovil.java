@@ -26,13 +26,13 @@ public class Automovil extends Vehiculo {
 
     @Override
     public String getCategoria() {
-        return "Automóvil";
+        return "Automovil";
     }
 
     @Override
     protected String getDetalleEspecifico() {
         return "Cantidad de pasajeros: " + cantidadPasajeros
-                + "\nTransmisión: " + (automatica ? "Automática" : "Manual");
+                + "\nTransmision: " + (automatica ? "Automatica" : "Manual");
     }
 
     @Override

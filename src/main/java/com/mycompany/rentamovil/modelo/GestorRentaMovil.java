@@ -23,19 +23,19 @@ public class GestorRentaMovil {
     public void registrarVehiculo(Vehiculo vehiculo) {
         if (vehiculo == null) {
             throw new IllegalArgumentException(
-                    "El vehículo no puede ser nulo.");
+                    "El vehiculo no puede ser nulo.");
         }
 
         String placa = Vehiculo.normalizarPlaca(vehiculo.getPlaca());
 
         if (vehiculos.containsKey(placa)) {
             throw new IllegalArgumentException(
-                    "Ya existe un vehículo con la placa " + placa + ".");
+                    "Ya existe un vehiculo con la placa " + placa + ".");
         }
 
         if (!vehiculo.isDisponible()) {
             throw new IllegalStateException(
-                    "Solo se pueden registrar vehículos disponibles.");
+                    "Solo se pueden registrar vehiculos disponibles.");
         }
 
         vehiculos.put(placa, vehiculo);
@@ -47,7 +47,7 @@ public class GestorRentaMovil {
 
         if (vehiculo == null) {
             throw new IllegalArgumentException(
-                    "No existe un vehículo con la placa "
+                    "No existe un vehiculo con la placa "
                     + placaNormalizada + ".");
         }
 
@@ -70,8 +70,8 @@ public class GestorRentaMovil {
 
         if (!vehiculo.isDisponible()) {
             throw new IllegalStateException(
-                    "El vehículo con placa " + vehiculo.getPlaca()
-                    + " ya está alquilado.");
+                    "El vehiculo con placa " + vehiculo.getPlaca()
+                    + " ya esta alquilado.");
         }
 
         // Preparar los importes antes de modificar el estado.
@@ -119,7 +119,7 @@ public class GestorRentaMovil {
         StringBuilder reporte = new StringBuilder("REPORTE DE FLOTA\n");
 
         if (vehiculos.isEmpty()) {
-            reporte.append("No hay vehículos registrados.\n");
+            reporte.append("No hay vehiculos registrados.\n");
         }
 
         for (Map.Entry<String, int[]> entrada : resumenCategorias.entrySet()) {
